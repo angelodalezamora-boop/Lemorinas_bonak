@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journey A. Lemorinas – Resume</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f6fb;
+      --surface: #ffffff;
+      --surface-2: #eceef8;
+      --fg: #10173a;
+      --muted: #566086;
+      --line: #d6daec;
+      --link: #1a2a6c;
+      --red: #b4232c;
+      --gold: #f0b90b;
+      --f-display: "Source Serif 4", Georgia, serif;
+      --f-body: "Public Sans", system-ui, -apple-system, sans-serif;
+      --f-mono: "JetBrains Mono", monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0a1030;
+        --surface: #121a45;
+        --surface-2: #1a2457;
+        --fg: #eef0fb;
+        --muted: #a3acd6;
+        --line: #2a3570;
+        --link: #9fb0ff;
+        --red: #ff7a80;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0a1030;
+      --surface: #121a45;
+      --surface-2: #1a2457;
+      --fg: #eef0fb;
+      --muted: #a3acd6;
+      --line: #2a3570;
+      --link: #9fb0ff;
+      --red: #ff7a80;
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      background: var(--bg);
+      color: var(--fg);
+      font: 400 10pt/1.45 var(--f-body);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Top Action Bar (Non-Print) */
+    .action-bar {
+      max-width: 800px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .action-bar a, .action-bar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 600 0.82rem var(--f-body);
+      color: var(--fg);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .action-bar a:hover, .action-bar button:hover {
+      border-color: var(--link);
+      color: var(--link);
+      transform: translateY(-1px);
+    }
+
+    /* Resume Layout */
+    .head2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 4px 0;
+      font-family: var(--f-display);
+      font-size: 22pt;
+      line-height: 1.1;
+      color: var(--fg);
+    }
+
+    .t {
+      font-weight: 600;
+      font-size: 11pt;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    .c {
+      font-size: 9pt;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .c a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .c a:hover {
+      text-decoration: underline;
+    }
+
+    .idpic {
+      width: 28mm;
+      height: 35mm;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      flex: none;
+    }
+
+    h2 {
+      font-family: var(--f-mono);
+      font-size: 9.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      border-bottom: 1px solid var(--line);
+      margin: 16px 0 8px 0;
+      padding-bottom: 3px;
+    }
+
+    p {
+      margin: 4px 0;
+      color: var(--fg);
+      text-align: justify;
+    }
+
+    ul {
+      margin: 4px 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    .r {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .r b {
+      color: var(--fg);
+      font-size: 10pt;
+    }
+
+    .r span {
+      font-size: 8.5pt;
+      color: var(--muted);
+      font-family: var(--f-mono);
+    }
+
+    .tech-list b {
+      color: var(--link);
+    }
+
+    /* Print Override */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0 !important;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      h1 { color: #1a2a6c !important; }
+      .t { color: #b4232c !important; }
+      h2 { color: #1a2a6c !important; border-bottom-color: #1a2a6c !important; }
+      .c, .r span { color: #444 !important; }
+      a { text-decoration: none !important; color: inherit !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Non-printable Toolbar -->
+  <div class="action-bar">
+    <a href="index.html">← Back to Portfolio</a>
+    <div style="display: flex; gap: 8px;">
+      <button id="themeToggle" type="button" aria-label="Toggle theme">🌗 Theme</button>
+      <button onclick="window.print()" type="button">🖨️ Print / Save PDF</button>
+    </div>
+  </div>
+
+  <!-- Printable Resume Container -->
+  <div class="container">
+    <header class="head2">
+      <div>
+        <h1>Journey A. Lemorinas</h1>
+        <div class="t">Aspiring Cybersecurity Analyst · Desktop Support Specialist</div>
+        <div class="c">
+          journeylemorinas@gmail.com · 
+          <a href="https://linkedin.com/in/journ-lemorinas" target="_blank" rel="noopener">linkedin.com/in/journ-lemorinas</a> · 
+          <a href="https://github.com/journeylemorinas-creator" target="_blank" rel="noopener">github.com/journeylemorinas-creator</a><br>
+          Parañaque City, Philippines
+        </div>
+      </div>
+      <img class="idpic" src="images/journ.jpg" alt="ID photo of Journey A. Lemorinas" onerror="this.src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAGQAUADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAEF...' ">
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p>BSIT student at Datamex College of Saint Adeline and Desktop Support Specialist with hands-on troubleshooting experience and a growing cybersecurity foundation. Reliable, patient with non-technical users, and focused on proactive threat prevention and accurate ticket documentation. Seeking an entry-level Cybersecurity Analyst or IT Security Support role.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="tech-list">
+        <li><b>Support & Systems:</b> Hardware/software diagnostics, OS installation, network troubleshooting (TCP/IP, DNS), user support, ticket documentation</li>
+        <li><b>Cybersecurity:</b> Security fundamentals, ethical hacking basics, phishing awareness, defensive practices, OWASP Top 10</li>
+        <li><b>Web & Data:</b> HTML, CSS, JavaScript, Bootstrap, MySQL / SQL basics</li>
+        <li><b>Tools & Cloud:</b> Git, GitHub, VS Code, Azure cloud computing fundamentals</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="r">
+        <b>Desktop Support Specialist</b>
+        <span>Parañaque City, PH</span>
+      </div>
+      <ul>
+        <li>Diagnose and resolve daily hardware, software, and local connectivity issues for users.</li>
+        <li>Communicate technical solutions in clear, accessible language to non-technical users.</li>
+        <li>Document resolution steps in service logs to resolve recurring tickets faster.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="r">
+        <b>Bachelor of Science in Information Technology (BSIT)</b>
+        <span>In Progress</span>
+      </div>
+      <p>Datamex College of Saint Adeline, Parañaque City</p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><b>Industry-Ready BSIT Portfolio Website:</b> Responsive online portfolio built with HTML, CSS, and JS demonstrating documented technical evidence, security case studies, and career plans.</li>
+        <li><b>AI-Assisted IT Help Desk & Service Ticket System:</b> Web-based ticketing system with automated issue classification and initial troubleshooting steps. <i>(In Progress)</i></li>
+        <li><b>Campus Cafe Sales Database:</b> MySQL database analyzing product sales, peak transaction periods, and inventory alerts with spreadsheet visualizations. <i>(In Progress)</i></li>
+        <li><b>Web Application Security Assessment:</b> Defensive security review analyzing input validation, password hashing, and SQL injection prevention. <i>(In Progress)</i></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certificates & Professional Training</h2>
+      <ul>
+        <li><b>Cybersecurity Fundamentals: Building a Safer Digital World</b> – BrightTALK by Informa TechTarget (Oct 12, 2026)</li>
+        <li><b>Ethical Hacking 101: Think Like a Hacker, Defend Like a Pro</b> – BrightTALK by Informa TechTarget (Oct 12, 2026)</li>
+        <li><b>Azure Unlocked: Your Gateway to Cloud Computing</b> – BrightTALK by Informa TechTarget (Oct 12, 2026)</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    // Theme toggle handling for standalone resume page
+    const toggleBtn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    // Check system or stored theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  </script>
+</body>
+</html>
